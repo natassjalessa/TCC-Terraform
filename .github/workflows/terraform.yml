@@ -26,11 +26,11 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Provider Terraform
-        run: terraform providers
-
       - name: Initialize Terraform
         run: terraform init
+
+      - name: Provider Terraform
+        run: terraform providers
 
       - name: Validate Terraform
         run: terraform validate 
