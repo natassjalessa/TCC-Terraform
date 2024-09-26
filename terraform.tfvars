@@ -1,4 +1,4 @@
-location            = "West Us "
+location            = "West Us"
 resource_group_name = "tcc-resources-2"
 vnet_name           = "tcc-vnet"
 vnet_address_space  = "10.0.0.0/16"
