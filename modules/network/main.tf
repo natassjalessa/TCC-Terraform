@@ -30,7 +30,7 @@ resource "azurerm_subnet" "public" {
 
 }
 
-resource "azure_network_security_group" "main" {
+resource "azurerm_network_security_group" "main" {
   name                = "${var.vnet_name}-nsg"
   location            = var.location
   resource_group_name = var.resource_group_name
