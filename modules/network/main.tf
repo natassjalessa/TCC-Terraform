@@ -1,7 +1,6 @@
 provider "azurerm" {
-  features {
-
-  }
+  features {}
+  version = "~> 3.0"
 }
 
 resource "azurerm_virtual_network" "main" {
