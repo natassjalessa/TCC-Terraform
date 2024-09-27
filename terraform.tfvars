@@ -1,5 +1,5 @@
 location             = "West Us"
-resource_group_name  = "tcc-resources-3"
+resource_group_name  = "tcc-resources"
 vnet_name            = "tcc-vnet"
 storage_account_name = "tccstorageaccount"
 vnet_address_space   = "10.0.0.0/16"
