@@ -78,4 +78,5 @@ resource "azurerm_storage_account" "tcc" {
   allow_blob_public_access  = false
   min_tls_version           = "TLS1_2"
   enable_https_traffic_only = true
+}
 
