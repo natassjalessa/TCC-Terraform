@@ -1,7 +1,7 @@
 location             = "West Us"
 resource_group_name  = "tcc-resources"
 vnet_name            = "tcc-vnet"
-storage_account_name = "tccstorageaccount"
+storage_account_name = "tccstorageaccountteste12"
 vnet_address_space   = "10.0.0.0/16"
 subnet_count         = 2
 subnet_prefixes      = ["10.0.1.0/24", "10.0.2.0/24"]
