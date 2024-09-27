@@ -5,6 +5,12 @@ terraform {
       version = "~> 3.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name   = "<resource_group_name>"
+    storage_account_name  = "<storage_account_name>"
+    container_name        = "tfstate"
+    key                   = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
@@ -77,5 +83,11 @@ resource "azurerm_storage_account" "tcc" {
 
   min_tls_version           = "TLS1_2"
   enable_https_traffic_only = true
+}
+
+resource "azurerm_storage_container" "tfstate" {
+  name                  = "tfstate"
+  storage_account_name  = azurerm_storage_account.terraform_state.name
+  container_access_type = "private"
 }
 
