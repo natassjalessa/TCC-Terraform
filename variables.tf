@@ -47,3 +47,8 @@ variable "ssh_public_key" {
   description = "Chave SSH publica para virtual machine"
   type        = string
 }
+
+variable "storage_account_name" {
+  description = "The name of the Storage Account"
+  type        = string
+}
