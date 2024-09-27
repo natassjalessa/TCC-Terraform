@@ -5,10 +5,25 @@ terraform {
       version = "~> 3.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name   = var.resource_group_name
+    storage_account_name  = var.storage_account_name
+    container_name        = "tfstate"
+    key                   = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
-  features {}
+  features {
+    provider "azurerm" {
+      features {
+      client_id       = var.client_id       # O appId do Service Principal
+      client_secret   = var.client_secret   # A senha gerada (password)
+      tenant_id       = var.tenant_id       # O tenant onde o Service Principal está
+      subscription_id = var.subscription_id # O ID da sua assinatura do Azure
+  }
+}
+  }
 }
 
 resource "azurerm_virtual_network" "main" {
