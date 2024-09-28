@@ -72,3 +72,8 @@ variable "subscription_id" {
   description = "The Subscription ID for the Azure account."
   type        = string
 }
+
+variable "storage_container_name" {
+  description = "The name of the Storage Container for the Terraform state."
+  type        = string
+}
