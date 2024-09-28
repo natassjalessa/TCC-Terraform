@@ -5,12 +5,6 @@ terraform {
       version = "~> 3.0"
     }
   }
-  backend "azurerm" {
-    resource_group_name   = azurerm_resource_group.main.name
-    storage_account_name  = "sr98we9r8we9r"
-    container_name        = "tfstate"
-    key                   = "terraform.tfstate"
-  }
 }
 
 provider "azurerm" {
@@ -100,5 +94,12 @@ resource "azurerm_storage_container" "tfstate" {
   name                  = "tfstate"
   storage_account_name  = "sr98we9r8we9r"
   container_access_type = "private"
+}
+
+backend "azurerm" {
+  resource_group_name   = azurerm_resource_group.main.name
+  storage_account_name  = "sr98we9r8we9r"
+  container_name        = "tfstate"
+  key                   = "terraform.tfstate"
 }
 
