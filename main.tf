@@ -36,6 +36,12 @@ module "network" {
   vnet_address_space  = var.vnet_address_space
   subnet_count        = var.subnet_count
   subnet_prefixes     = var.subnet_prefixes
+
+  client_id           = var.client_id           # Adicione isso
+  client_secret       = var.client_secret       # Adicione isso
+  subscription_id     = var.subscription_id     # Adicione isso
+  tenant_id           = var.tenant_id           # Adicione isso
+  storage_account_name = var.storage_account_name # Adicione isso
 }
 
 resource "azurerm_network_interface" "tcc" {
@@ -80,7 +86,7 @@ resource "azurerm_linux_virtual_machine" "tcc" {
 }
 
 resource "azurerm_storage_account" "tcc" {
-  name                      = var.storage_account_name
+  name                      = "sr98we9r8we9r"
   resource_group_name       = azurerm_resource_group.main.name
   location                  = var.location
   account_tier              = "Standard"
