@@ -98,7 +98,7 @@ resource "azurerm_storage_account" "tcc" {
 
 resource "azurerm_storage_container" "tfstate" {
   name                  = "tfstate"
-  storage_account_name  = azurerm_storage_account.terraform_state.name
+  storage_account_name  = azurerm_storage_account.main.name
   container_access_type = "private"
 }
 
