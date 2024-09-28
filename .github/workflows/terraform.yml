@@ -55,7 +55,7 @@ jobs:
 
       - name: Apply Terraform
         if: github.ref == 'refs/heads/master'
-        run: terraform apply -auto-approve tfplan
+        run: terraform apply -auto-approve -out=tfplan -lock=false
         env:
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
