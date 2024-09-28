@@ -5,6 +5,18 @@ terraform {
       version = "~> 3.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name   = azurerm_resource_group.main.name
+    storage_account_name  = "sr98we9r8we9r"
+    container_name        = "tfstate"
+    key                   = "terraform.tfstate"
+  }
+}
+
+resource "azurerm_resource_group" "main" {
+  name     = var.resource_group_name
+  location = var.location
+
 }
 
 provider "azurerm" {
@@ -14,12 +26,6 @@ provider "azurerm" {
   client_secret   = var.client_secret   # Substitua pela variável ARM_CLIENT_SECRET
   subscription_id = var.subscription_id  # Substitua pela variável ARM_SUBSCRIPTION_ID
   tenant_id       = var.tenant_id       # Substitua pela variável ARM_TENANT_ID
-}
-
-resource "azurerm_resource_group" "main" {
-  name     = var.resource_group_name
-  location = var.location
-
 }
 
 module "network" {
@@ -94,12 +100,5 @@ resource "azurerm_storage_container" "tfstate" {
   name                  = "tfstate"
   storage_account_name  = "sr98we9r8we9r"
   container_access_type = "private"
-}
-
-backend "azurerm" {
-  resource_group_name   = azurerm_resource_group.main.name
-  storage_account_name  = "sr98we9r8we9r"
-  container_name        = "tfstate"
-  key                   = "terraform.tfstate"
 }
 
