@@ -16,10 +16,10 @@ terraform {
 provider "azurerm" {
   features {}
 
-  client_id       = ${{ secrets.AZURE_CLIENT_ID }}      # O appId do Service Principal
-  client_secret   = ${{ secrets.AZURE_CLIENT_SECRET }}   # A senha gerada (password)
-  tenant_id       = ${{ secrets.AZURE_TENANT_ID }}      # O tenant onde o Service Principal está
-  subscription_id = ${{ secrets.AZURE_SUBSCRIPTION_ID }} # O ID da sua assinatura do Azure
+  client_id       = "f21fa1c1-38aa-426f-a33b-cb5329fb013b"      # O appId do Service Principal
+  client_secret   = "0Pn8Q~DqMSjFivK1EsHoajiWjp3JSw8wUTUwnbnO"   # A senha gerada (password)
+  tenant_id       = "a15af431-5679-4f86-bc34-2eae32433056"    # O tenant onde o Service Principal está
+  subscription_id = "ad56e6da-120c-4d7c-85fd-8181ce503d23" # O ID da sua assinatura do Azure
 }
 
 resource "azurerm_resource_group" "main" {
