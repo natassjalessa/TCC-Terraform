@@ -30,3 +30,28 @@ variable "subnet_prefixes" {
   description = "Lista de address prefixes para subnets"
   type        = list(string)
 }
+
+variable "storage_account_name" {
+  description = "The name of the Storage Account"
+  type        = string
+}
+
+variable "client_id" {
+  description = "The Client ID of the Service Principal."
+  type        = string
+}
+
+variable "client_secret" {
+  description = "The Client Secret of the Service Principal."
+  type        = string
+}
+
+variable "tenant_id" {
+  description = "The Tenant ID for the Azure subscription."
+  type        = string
+}
+
+variable "subscription_id" {
+  description = "The Subscription ID for the Azure account."
+  type        = string
+}
