@@ -6,8 +6,8 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name   = var.resource_group_name
-    storage_account_name  = var.storage_account_name
+    resource_group_name   = "tfresourgroupteste"
+    storage_account_name  = "sr98we9r8we9r"
     container_name        = "tfstate"
     key                   = "terraform.tfstate"
   }
